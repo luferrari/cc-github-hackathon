@@ -24,7 +24,7 @@ function draw() {
 
   tree(
     width / 6,
-    2.325 * height / 6,
+    2 * height / 6,
     3,
     color(142, 202, 48),
     color(202, 231, 156),
@@ -33,7 +33,7 @@ function draw() {
   );
   tree(
     5 * width / 6,
-    2.325 * height / 6,
+    2 * height / 6,
     3,
     color(142, 202, 48),
     color(202, 231, 156),
@@ -58,18 +58,18 @@ function draw() {
 
   fill(255, 249, 79);
   push();
-  translate(width / 2, height / 3.2);
+  translate(width / 2, height / 6.2);
   rotate(125 + (1 + vol) * 180);
   angleMode(RADIANS);
   star(0, 0, width / 20 * (1 + vol), width / 50 * (1 + vol), 5);
   pop();
 
-  var o = map(vol, 0.25, 0.5, 0, 255);
+  var o = map(vol, 0, 0.5, 63, 255);
   fill(223, 41, 53, o);
   textAlign(CENTER);
   textFont(cinzel);
   textSize(width / 10);
-  text(message, width / 2, height / 8);
+  text(message, width / 2, height / 7);
 
   //DEBUG();
 }
@@ -81,10 +81,10 @@ function tree(x, y, size, from, to, dims, mouth) {
 
   noStroke();
   push();
-  translate(x, y + dims / 10);
+  translate(x, y - dims / 10);
 
   fill(122, 84, 46);
-  rect(-dims / 15, size * 2 + dims / 2, dims / 7.5, size * 2 + dims / 5, dims / 50);
+  rect(-dims / 15, dims / 2, dims / 7.5, dims / 6, dims / 50);
 
   scale(0.85, 1);
   for (var i = 1; i < size + 1; i++) {
